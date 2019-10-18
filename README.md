@@ -39,7 +39,7 @@ This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-
 - Use remote state for terraform.tfstate 
 - Make all infrastructure elements independent as much as possible 
 - Leverage modules to have a more conicise terraform scripts.
-- For Multi Container Definitions, consider using Modules [1] (https://github.com/cloudposse/terraform-aws-ecs-container-definition) [2] (https://github.com/mongodb/terraform-aws-ecs-task-definition)
+- For Multi Container Definitions, consider using Modules [1](https://github.com/cloudposse/terraform-aws-ecs-container-definition) [2](https://github.com/mongodb/terraform-aws-ecs-task-definition)
 - Service AutoScaling Using AWS Application Autoscaling 
 
 ## Tests 
