@@ -1,0 +1,16 @@
+# Node APP Infrastructure
+
+This folder is made up of terraform files to build the cloud infrastrcuture needed to run the project. The parent folder `terraform` contains files to build networks, security groups, ECS resources, Load Balancers etc. The sub folder `data_infra` contianes files to provision a managed Document DB and Redis on AWS. You're expected to run the parenet folder first and then retrived the env variables needed for the data store resources like VPC, Subnets and Security Groups. 
+
+## Steps
+
+- Install [Terraform](https://www.terraform.io/downloads.html)
+- Update the needed env variables in `nodeapp.tfvars`
+- Run
+```
+terraform init
+terraform plan -var-file=nodeapp.tfvars
+terraform apply -var-file=nodeapp.tfvars
+```
+
+- Also repeat similar steps for the data-infra folder but this time adding the needed variables in `data_store.tfvars`.
