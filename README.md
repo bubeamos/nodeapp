@@ -27,7 +27,7 @@ This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-
 
 - Parameterize as much as possible 
 - Do not commit secrets to source control
-- In your Dockerfile, COPY package*.json ./ before running `npm install` or `yarn`
+- In your Dockerfile, `COPY package*.json ./` before running `npm install` or `yarn`
 - Define memoryReservation (soft limit) instead of memory (hard limit) in your task definition
 - You can choose to Run your contianer on ECS fargate (Managed Service), this impelemtation uses EC2 launch type which give you more control.
 - For improved security, always place your data stores and undelying ECS contianer instances in a private subnet.
