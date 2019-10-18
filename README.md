@@ -7,9 +7,9 @@
 ![image](https://user-images.githubusercontent.com/7678290/67121579-295c4700-f1ec-11e9-880d-8866547e96c3.png)
 
 
-This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-Node-Starter). You can find the original [Original README](#read-me) here. I will just describe the implementation done below and possible improvements.
+This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-Node-Starter). You can find the original [Original README](#table-of-contents) here. I will just describe the implementation done below and possible improvements.
 
-# Implementations Done:
+## Implementation
 
 - Updated the app to read REDIS URI from the contianer environment 
 - Dockerized the app
@@ -20,34 +20,35 @@ This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-
 - CloudWatch Metrics are also enabled on an ECS Cluster Level and on an ECS Service to monitor 
 - Used Amazon ElastiCache Redis and ‪AWS Document (Mongo) DB Managed Services as data stores
 - Stored Facebook Secrets and Databse Credentials in Paramter Store and then Retrived the values in the contianer at runtime. 
+- Blue green deployment to ensure that there's no downtime if new images are deployed. This was done by setting appropriate min and max healthy percent for ECS Service tasks and desired count. 
 
 
-# Some Tips That Was Followed:
+## Tips
 
 - Parameterize as much as possible 
 - Do not commit secrets to source control
 - In your Dockerfile, COPY package*.json ./ before running `npm install` or `yarn`
 - Define memoryReservation (soft limit) instead of memory (hard limit) in your task definition
 - You can choose to Run your contianer on ECS fargate (Managed Service), this impelemtation uses EC2 launch type which give you more control.
-- For improved security, always place your data stores and undelying ECS contianer instances in a private subnet
+- For improved security, always place your data stores and undelying ECS contianer instances in a private subnet.
 
 
-# Imporvements To Be Done 
+
+## Improvements To Be Done 
 
 - Use remote state for terraform.tfstate 
 - Make all infrastructure elements independent as much as possible 
 - Leverage modules to have a more conicise terraform scripts.
 - For Multi Container Definitions, consider using Modules [1] (https://github.com/cloudposse/terraform-aws-ecs-container-definition) [2] (https://github.com/mongodb/terraform-aws-ecs-task-definition)
 - Service AutoScaling Using AWS Application Autoscaling 
-- 
 
-# Tests 
+## Tests 
 
 - To Test The CI/CD, please feel free to make a trivial modification (maybe change a text on the home page) and raise a PR.
-- I'll merge the PR and the change should be up in about 5 mins after the PR is merged to master 
+- I'll merge the PR and the change should be up in about 8 mins after the PR is merged to master.
+- The CI waits until the ECS Service gets to a teady state before it reports back as complete.
 
 
-# Original README
 The main purpose of this repository is to show a good end-to-end project setup and workflow for writing Node code in TypeScript.
 We will try to keep this as up-to-date as possible, but community contributions and recommendations for improvements are encouraged and will be most welcome.
 
