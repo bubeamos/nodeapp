@@ -1,5 +1,4 @@
 # ecs.tf
-
 resource "aws_ecs_cluster" "nodeapp-cluster" {
   name = "nodeapp-cluster"
 }

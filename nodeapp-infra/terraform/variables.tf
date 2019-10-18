@@ -179,3 +179,14 @@ variable "acm_arn" {
   description = "ARN Of the ACM To Use"
 }
 
+
+variable "backend_bucket" {
+  type        = string
+  description = "S3 Bucket For BACKEND"
+}
+
+variable "dynamodb_table" {
+  type        = string
+  description = "Dynamo Table To Lock state"
+}
+
