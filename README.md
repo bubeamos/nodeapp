@@ -7,9 +7,9 @@
 ![image](https://user-images.githubusercontent.com/7678290/67121579-295c4700-f1ec-11e9-880d-8866547e96c3.png)
 
 
-This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-Node-Starter). You can find the original [Original README](#read-me) here. I will just describe the implementation done below and possible improvements.
+This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-Node-Starter). You can find the original [Original README](#table-of-contents) here. I will just describe the implementation done below and possible improvements.
 
-# Implementations Done:
+## Implementation
 
 - Updated the app to read REDIS URI from the contianer environment 
 - Dockerized the app
@@ -22,7 +22,7 @@ This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-
 - Stored Facebook Secrets and Databse Credentials in Paramter Store and then Retrived the values in the contianer at runtime. 
 
 
-# Some Tips That Was Followed:
+## Tips
 
 - Parameterize as much as possible 
 - Do not commit secrets to source control
@@ -32,7 +32,7 @@ This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-
 - For improved security, always place your data stores and undelying ECS contianer instances in a private subnet
 
 
-# Imporvements To Be Done 
+## Improvements To Be Done 
 
 - Use remote state for terraform.tfstate 
 - Make all infrastructure elements independent as much as possible 
@@ -41,13 +41,12 @@ This a a clone of the project here [Here](https://github.com/nanyaks/TypeScript-
 - Service AutoScaling Using AWS Application Autoscaling 
 - 
 
-# Tests 
+## Tests 
 
 - To Test The CI/CD, please feel free to make a trivial modification (maybe change a text on the home page) and raise a PR.
 - I'll merge the PR and the change should be up in about 5 mins after the PR is merged to master 
 
 
-# Original README
 The main purpose of this repository is to show a good end-to-end project setup and workflow for writing Node code in TypeScript.
 We will try to keep this as up-to-date as possible, but community contributions and recommendations for improvements are encouraged and will be most welcome.
 
