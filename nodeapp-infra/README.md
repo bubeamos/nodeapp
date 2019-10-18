@@ -13,4 +13,4 @@ terraform plan -var-file=nodeapp.tfvars
 terraform apply -var-file=nodeapp.tfvars
 ```
 
-- Also repeats similar steps for the data-infra folder but this time adding the needed variables in `data_store.tfvars`
+- Also repeat similar steps for the data-infra folder but this time adding the needed variables in `data_store.tfvars`.
