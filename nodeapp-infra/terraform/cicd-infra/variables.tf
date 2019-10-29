@@ -15,7 +15,7 @@ variable "ecs_service_name" {
 }
 
 variable "github_webhooks_token" {
-  description = "Token To Enable GitHub API Calls, Should have the following permissionsrepo,repo:status,admin:repo_hook https://docs.aws.amazon.com/codebuild/latest/userguide/sample-access-tokens.html#sample-access-tokens-prerequisites"
+  description = "Token To Enable GitHub API Calls, Should have the following permissions repo,repo:status,admin:repo_hook https://docs.aws.amazon.com/codebuild/latest/userguide/sample-access-tokens.html#sample-access-tokens-prerequisites"
 }
 
 variable "github_repo_name" {

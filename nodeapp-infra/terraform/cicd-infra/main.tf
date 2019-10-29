@@ -1,66 +1,8 @@
-/* AWS/Git Providers */
-provider "aws" {
-  shared_credentials_file = "$HOME/.aws/credentials"
-  profile                 = "default"
-  region                  = "${var.region}"
-}
-
-
-provider "github" {
-  token        = "${var.github_webhooks_token}"
-  organization = "${var.github_organization}"
-  individual = true
-}
-
+/* S3 Bucket For Artifacts  */
 resource "aws_s3_bucket" "source" {
   bucket        = "${var.source_bucket}"
   acl           = "private"
   force_destroy = true
-}
-
-
-/* policies/roles */
-resource "aws_iam_role" "codepipeline_role" {
-  name               = "codepipeline-role"
-
-  assume_role_policy = file("./policies/codepipeline_role.json")
-}
-
-
-data "template_file" "codepipeline_policy" {
-  template = "${file("${path.module}/policies/codepipeline.json")}"
-
-  vars = {
-    aws_s3_bucket_arn = "${aws_s3_bucket.source.arn}"
-  }
-
-}
-
-resource "aws_iam_role_policy" "codepipeline_policy" {
-  name   = "codepipeline_policy"
-  role   = "${aws_iam_role.codepipeline_role.id}"
-  policy = "${data.template_file.codepipeline_policy.rendered}"
-}
-
-resource "aws_iam_role" "codebuild_role" {
-  name               = "codebuild-role"
-
-  assume_role_policy = file("./policies/codebuild_role.json")
-}
-
-data "template_file" "codebuild_policy" {
-
-  template = file("./policies/codebuild_policy.json")
-
-  vars = {
-    aws_s3_bucket_arn = "${aws_s3_bucket.source.arn}"
-  }
-}
-
-resource "aws_iam_role_policy" "codebuild_policy" {
-  name        = "codebuild-policy"
-  role        = "${aws_iam_role.codebuild_role.id}"
-  policy      = "${data.template_file.codebuild_policy.rendered}"
 }
 
 /*
@@ -170,7 +112,7 @@ resource "aws_codepipeline" "nodeapp_pipeline" {
 
 # Automatically Create a WebHook From CodePipeline To GitHUb
 resource "aws_codepipeline_webhook" "webhook" {
-  name            = "nodeapp-github-webhook"
+  name            = "nodeapp_github_webhook"
   authentication  = "GITHUB_HMAC"
   target_action   = "Source"
   target_pipeline = "${aws_codepipeline.nodeapp_pipeline.name}"
