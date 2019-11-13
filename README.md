@@ -2,7 +2,7 @@
 
 [![Dependency Status](https://david-dm.org/Microsoft/TypeScript-Node-Starter.svg)](https://david-dm.org/Microsoft/TypeScript-Node-Starter) [![Build Status](https://travis-ci.org/Microsoft/TypeScript-Node-Starter.svg?branch=master)](https://travis-ci.org/Microsoft/TypeScript-Node-Starter)
 
-**Live Demo**: [https://app.bube.tech/](https://app.bube.tech/)
+**Live Demo**: [https://app.bube.tech/](https://app.bube.tech)
 
 ![image](https://user-images.githubusercontent.com/7678290/67121579-295c4700-f1ec-11e9-880d-8866547e96c3.png)
 
