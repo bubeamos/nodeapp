@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
     # environment:
-    # - MONGODB_USER=bube
+    # - MONGODB_USER=bubebebeb
     # - MONGODB_DATABASE=test_db
     # - MONGODB_PASS=password
     volumes:
